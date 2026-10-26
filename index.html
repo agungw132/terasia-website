@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terasia — Dari sensor ke keputusan. IoT analytics untuk rumah Anda</title>
-<meta name="description" content="Terasia mengumpulkan, mengarsipkan, dan menganalisis data perangkat IoT Anda — dashboard real-time, arsip yang bisa ditanya, dan asisten AI bernama Tera.">
+<title>Terasia — Dari data perangkat jadi keputusan bisnis</title>
+<meta name="description" content="Terasia mengubah data sensor, meter, dan kamera menjadi keputusan bisnis: energi terkendali, occupancy ramah privasi, dan jawaban atas pertanyaan Anda dalam Bahasa Indonesia — dengan data yang tetap berdaulat di Indonesia.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 </head>
@@ -15,8 +15,9 @@
   <div class="container nav-inner">
     <a href="#" class="logo">Tera<span class="logo-accent">sia</span></a>
     <div class="nav-links">
-      <a href="#tahapan">Tahapan</a>
-      <a href="#fitur">Fitur</a>
+      <a href="#masalah">Masalah</a>
+      <a href="#nilai">Nilai</a>
+      <a href="#segmen">Untuk Siapa</a>
       <a href="#langkah">Cara Kerja</a>
       <a href="#keamanan">Keamanan</a>
     </div>
@@ -27,152 +28,176 @@
 <!-- HERO -->
 <header class="hero">
   <div class="container">
-    <p class="hero-kicker">MANUAL → TERHUBUNG → TERKUMPUL → AGENTIC</p>
-    <h1>Dulu sensor cuma berkedip.<br>Sekarang sensor <span class="accent">bercerita</span>.</h1>
-    <p class="hero-sub">Terasia mengumpulkan, mengarsipkan, dan menganalisis data perangkat IoT Anda —
-    dari sensor energi sampai kamera — lalu menyajikannya kembali sebagai dashboard real-time,
-    arsip jangka panjang yang bisa di-query, dan asisten AI yang bisa Anda ajak bicara.</p>
+    <p class="hero-kicker">DATA PERANGKAT → KEPUTUSAN BISNIS</p>
+    <h1>Data perangkat Anda sudah ada.<br>Sekarang buat dia <span class="accent">bekerja</span>.</h1>
+    <p class="hero-sub">Terasia mengubah data sensor, meter, dan kamera menjadi keputusan:
+    pantau energi per panel, ketahui kepadatan pengunjung tanpa menyimpan wajah,
+    dan cukup bertanya dalam Bahasa Indonesia untuk mendapat jawaban dari data Anda sendiri —
+    dengan data yang tetap berdaulat di Indonesia.</p>
     <div class="hero-cta">
       <a href="https://explore.ter.asia" class="btn btn-primary">Mulai di Portal</a>
-      <a href="#langkah" class="btn btn-ghost">Lihat cara kerja</a>
+      <a href="#masalah" class="btn btn-ghost">Kenali masalahnya</a>
     </div>
-    <p class="hero-note">Data Anda tetap milik Anda · Isolasi per-tenant di layer data · TLS &amp; mTLS end-to-end</p>
+    <p class="hero-note">Untuk pengelola gedung &amp; fasilitas · Ruang publik · Industri ringan · Integrator sistem</p>
   </div>
 </header>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="container stats-grid">
-    <div class="stat"><span class="stat-num">real-time</span><span class="stat-label">sensor ke dashboard dalam hitungan detik</span></div>
-    <div class="stat"><span class="stat-num">&lt; 1 detik</span><span class="stat-label">query arsip satu hari penuh</span></div>
-    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">telemetry terarsip sebagai parquet di object storage</span></div>
-    <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">pipeline MQTT berjalan tanpa jeda</span></div>
-  </div>
-</section>
-
-<!-- TAHAPAN -->
-<section id="tahapan" class="section">
+<!-- MASALAH -->
+<section id="masalah" class="section">
   <div class="container">
-    <p class="kicker">PERANGKAT ANDA SUDAH SAMPAI MANA?</p>
-    <h2>Empat tahap. Kenali posisi Anda.</h2>
-    <p class="section-sub">Setiap rumah dan workshop mulai dari tempat yang sama: perangkat yang bekerja
-    sendiri-sendiri. Terasia menuntaskan tiga tahap pertama secara otomatis — tahap keempat jadi milik Anda.</p>
+    <p class="kicker">MASALAH YANG KAMI LIHAT BERULANG</p>
+    <h2>Perangkat sudah pintar.<br>Kenapa biayanya tetap naik?</h2>
     <div class="steps-grid">
       <div class="step-card">
-        <span class="step-tag">TAHAP 01</span>
-        <h3>Berkedip sendiri</h3>
-        <p>Sensor, switch, dan kamera bekerja — tapi datanya menguap begitu layar perangkat berganti. Tidak ada sejarah, tidak ada pola.</p>
-        <p class="step-cost">Biaya tersembunyi: keputusan berdasar tebakan.</p>
+        <span class="step-tag">ENERGI</span>
+        <h3>Tagihan datang, kejutan ikut</h3>
+        <p>Konsumsi listrik naik — tapi tidak ada yang tahu panel atau lantai mana penyebabnya.
+        Baru sadar setelah tagihan terbit, saat penghematan sudah terlambat.</p>
+        <p class="step-cost">Biaya: pemborosan yang tidak pernah terdeteksi.</p>
       </div>
       <div class="step-card">
-        <span class="step-tag">TAHAP 02</span>
-        <h3>Terhubung</h3>
-        <p>Semua perangkat publish ke satu broker MQTT — TLS untuk perangkat rumah, mTLS untuk perangkat produksi. Kredensial per perangkat, isolasi per tenant.</p>
-        <p class="step-cost">Ciri: satu titik masuk, nol konfigurasi manual.</p>
+        <span class="step-tag">DATA</span>
+        <h3>Dashboard yang tidak ditonton</h3>
+        <p>Data berhenti di grafik. Tidak ada peringatan dini, tidak ada laporan rutin,
+        tidak ada tindakan. Membaca grafik pun jadi pekerjaan sampingan yang tak selesai.</p>
+        <p class="step-cost">Biaya: tim data sendiri, atau proyek kustom yang mahal.</p>
       </div>
       <div class="step-card">
-        <span class="step-tag">TAHAP 03</span>
-        <h3>Terkumpul</h3>
-        <p>Telemetry mengalir ke dashboard real-time dan terarsip otomatis sebagai parquet — bertahun-tahun kemudian masih bisa di-query dalam hitungan detik.</p>
-        <p class="step-cost">Ciri: data lama bukan arsip mati.</p>
+        <span class="step-tag">PRIVASI</span>
+        <h3>Occupancy tanpa melanggar privasi</h3>
+        <p>Anda butuh data keramaian pengunjung — tapi face recognition berisiko secara hukum
+        (UU PDP) dan reputasi. Jadi keputusan soal ruang berjalan tanpa data.</p>
+        <p class="step-cost">Biaya: keputusan berdasar perasaan.</p>
       </div>
-      <div class="step-card step-card-accent">
-        <span class="step-tag">TAHAP 04</span>
-        <h3>Agentic</h3>
-        <p>Anda tidak lagi membaca grafik satu per satu. Tanya dalam bahasa biasa — "berapa kWh kemarin dibanding minggu lalu?" — asisten menjawab dengan data Anda sendiri.</p>
-        <p class="step-cost">Ciri: data mengerjakan, Anda memutuskan.</p>
+      <div class="step-card">
+        <span class="step-tag">INTEGRATOR</span>
+        <h3>Stack dibangun ulang tiap proyek</h3>
+        <p>Platform untuk klien A tidak bisa dipakai untuk klien B. Setiap proyek membangun
+        pipeline, dashboard, dan user management yang sama dari nol.</p>
+        <p class="step-cost">Biaya: margin termakan pekerjaan berulang.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FITUR -->
-<section id="fitur" class="section section-alt">
+<!-- NILAI -->
+<section id="nilai" class="section section-alt">
   <div class="container">
-    <p class="kicker">SATU PLATFORM, SEMUA KEBUTUHAN TELEMETRY</p>
-    <h2>Apa yang Terasia kerjakan untuk Anda</h2>
+    <p class="kicker">SATU PLATFORM, DARI SENSOR SAMPAI KEPUTUSAN</p>
+    <h2>Terasia menjawab kebutuhan bisnis,<br>bukan sekadar menyajikan grafik.</h2>
     <div class="feature-grid">
       <div class="feature-card">
-        <div class="feature-icon">📈</div>
-        <h3>Dashboard real-time</h3>
-        <p>Daya, energi, suhu, kehadiran — semua sensor tampil langsung di dashboard Grafana.
-        Melihat konsumsi listrik per jam bukan lagi pekerjaan manual.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🗄️</div>
-        <h3>Arsip yang hidup</h3>
-        <p>Setiap pesan telemetry dikompresi jadi parquet harian di object storage.
-        Data dua tahun lalu tetap bisa di-query — bukan cuma disimpan.</p>
+        <div class="feature-icon">💰</div>
+        <h3>Energi terkendali</h3>
+        <p>Pantau kWh per panel dan per lantai secara live, lengkap dengan peringatan dini
+        sebelum tagihan melonjak. Efisiensi berbasis angka — bukan tebakan di rapat bulanan.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">💬</div>
-        <h3>Asisten AI "Tera"</h3>
-        <p>Tanya data dalam bahasa sehari-hari. Tera menerjemahkan pertanyaan Anda menjadi
-        query ke arsip Anda sendiri — dan hanya milik Anda.</p>
+        <h3>Cukup bertanya</h3>
+        <p>"Berapa kWh lantai 3 minggu ini dibanding minggu lalu?" — asisten AI menjawab
+        dalam Bahasa Indonesia dari data Anda sendiri. Tanpa SQL, tanpa menunggu laporan.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔬</div>
-        <h3>Notebook analisis</h3>
-        <p>Untuk yang ingin menggali lebih dalam: notebook Jupyter pribadi per user,
-        langsung tersambung ke data Anda dengan isolasi penuh.</p>
+        <div class="feature-icon">🛡️</div>
+        <h3>Occupancy ramah privasi</h3>
+        <p>Kepadatan pengunjung per zona tanpa menyimpan wajah — video diproses di perangkat,
+        bukan dikirim ke cloud. Data keramaian tanpa risiko hukum.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔔</div>
-        <h3>Alerting</h3>
-        <p>Atur aturan di atas telemetry Anda — daya melebihi ambang, sensor diam terlalu lama —
-        dan terima notifikasi sebelum masalah membesar.</p>
+        <div class="feature-icon">🇮🇩</div>
+        <h3>Data berdaulat</h3>
+        <p>Data dan pemrosesan bisa tetap di Indonesia — termasuk model AI-nya.
+        Untuk banyak organisasi, kepatuhan ini alasan memilih, bukan sekadar syarat.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🧩</div>
-        <h3>Playground MQTT</h3>
-        <p>Publish dan listen langsung dari browser untuk uji perangkat baru —
-        tanpa install client, tanpa keluar dari portal.</p>
+        <div class="feature-icon">🔓</div>
+        <h3>Tanpa lock-in</h3>
+        <p>Arsip Anda disimpan sebagai format terbuka (Parquet) dan bisa diekspor penuh
+        kapan saja. Janji sederhana: data Anda tetap milik Anda.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏢</div>
+        <h3>Untuk integrator</h3>
+        <p>Satu platform multi-klien yang bisa di-deploy ulang untuk tiap klien —
+        berhenti membangun ulang stack yang sama dari nol.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEGMEN -->
+<section id="segmen" class="section">
+  <div class="container">
+    <p class="kicker">DIPAKAI SIAPA</p>
+    <h2>Dirancang untuk yang mengelola aset fisik</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <h3>🏢 Gedung &amp; fasilitas</h3>
+        <p>Kantor, kampus, hotel, gedung publik — kendalikan energi dan utilitas per area,
+        dengan bukti angka untuk setiap keputusan efisiensi.</p>
+      </div>
+      <div class="step-card">
+        <h3>🏟️ Ruang publik &amp; venue</h3>
+        <p>Mall, event, transportasi — pahami kepadatan dan arus pengunjung per zona,
+        tanpa menyimpan identitas siapa pun.</p>
+      </div>
+      <div class="step-card">
+        <h3>🏭 Industri ringan</h3>
+        <p>Meter, mesin, dan utilitas produksi — deteksi anomali lebih awal,
+        sebelum gangguan jadi downtime.</p>
+      </div>
+      <div class="step-card">
+        <h3>🔗 Integrator sistem</h3>
+        <p>BMS, CCTV, IoT — satu platform untuk banyak klien, dengan deployment berulang
+        di lingkungan pilihan klien.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CARA KERJA -->
-<section id="langkah" class="section">
+<section id="langkah" class="section section-alt">
   <div class="container">
-    <p class="kicker">EMPAT LANGKAH. BISA DICEK.</p>
-    <h2>Dari perangkat pertama ke asisten pribadi</h2>
-    <p class="section-sub">Setiap langkah punya keluaran yang bisa Anda pegang. Tidak ada tahap yang selesai tanpa bukti.</p>
+    <p class="kicker">DARI PASANG SAMPAI BERNILAI</p>
+    <h2>Empat langkah. Bisa dicek.</h2>
+    <p class="section-sub">Setiap langkah punya keluaran yang bisa Anda pegang — tidak ada tahap yang selesai tanpa bukti.</p>
     <div class="how-list">
       <div class="how-item">
         <span class="how-num">01</span>
         <div>
           <h3>Sambungkan perangkat</h3>
-          <p>Daftar di portal, kredensial MQTT dibuat otomatis. Perangkat rumah lewat TLS (port 8883),
-          perangkat produksi lewat mTLS dengan client certificate yang Anda terbitkan sendiri dari portal.</p>
+          <p>Meter, sensor, dan kamera masuk lewat satu pintu MQTT terenkripsi —
+          kredensial per perangkat, izin per tenant. Perangkat yang sudah ada
+          (Tasmota, ESPHome) tinggal diarahkan ke sini.</p>
           <p class="how-proof">Keluaran: perangkat online di daftar device Anda.</p>
         </div>
       </div>
       <div class="how-item">
         <span class="how-num">02</span>
         <div>
-          <h3>Data mengalir</h3>
-          <p>Telemetry masuk lewat broker MQTT, tersimpan real-time untuk dashboard dan terarsip
-          otomatis ke object storage. Anda tidak mengelola apa pun.</p>
-          <p class="how-proof">Keluaran: grafik hidup + arsip harian yang terlihat di file browser.</p>
+          <h3>Data live</h3>
+          <p>Dari pasang ke terlihat dalam hitungan menit: dashboard real-time untuk pemantauan,
+          arsip otomatis untuk sejarah. Tanpa perlu membangun tim data sendiri.</p>
+          <p class="how-proof">Keluaran: konsumsi per panel terlihat — bukan sekadar total tagihan.</p>
         </div>
       </div>
       <div class="how-item">
         <span class="how-num">03</span>
         <div>
-          <h3>Jelajahi</h3>
-          <p>Dashboard untuk memantau, notebook untuk menganalisis, file browser untuk mengunduh data mentah.
-          Semua dari satu portal, satu login.</p>
-          <p class="how-proof">Keluaran: Anda tahu apa yang sebenarnya terjadi di rumah Anda.</p>
+          <h3>Tanya &amp; pahami</h3>
+          <p>Ajak asisten AI bicara dalam Bahasa Indonesia. Jawaban datang dari data Anda sendiri,
+          terisolasi dari tenant lain — bukan template, bukan tebakan.</p>
+          <p class="how-proof">Keluaran: jawaban atas pertanyaan bisnis, tanpa membaca grafik satu per satu.</p>
         </div>
       </div>
       <div class="how-item">
         <span class="how-num">04</span>
         <div>
-          <h3>Tanya Tera</h3>
-          <p>Asisten AI Tera siap menjawab pertanyaan atas data Anda sendiri — dalam bahasa Indonesia,
-          tanpa SQL, tanpa spreadsheet.</p>
-          <p class="how-proof">Keluaran: jawaban terverifikasi dari data Anda, bukan tebakan.</p>
+          <h3>Bertindak lebih awal</h3>
+          <p>Pasang peringatan dini di atas data live — konsumsi melebihi ambang, sensor diam,
+          ruangan terlalu penuh. Masalah ketahuan sebelum tagihan atau kerusakan datang.</p>
+          <p class="how-proof">Keluaran: keputusan efisiensi dan perawatan berbasis bukti.</p>
         </div>
       </div>
     </div>
@@ -180,25 +205,25 @@
 </section>
 
 <!-- KEAMANAN -->
-<section id="keamanan" class="section section-alt">
+<section id="keamanan" class="section">
   <div class="container">
-    <p class="kicker">DATA RUMAH ADALAH DATA PRIBADI</p>
-    <h2>Keamanan bukan fitur tambahan</h2>
+    <p class="kicker">ALASAN BISNIS, BUKAN SEKADAR SYARAT TEKNIS</p>
+    <h2>Keamanan &amp; kedaulatan data</h2>
     <div class="feature-grid">
       <div class="feature-card">
-        <h3>🔐 Isolasi per tenant</h3>
-        <p>Data Anda difilter di layer server — bukan cuma di tampilan. Tenant lain tidak bisa membaca
-        topik Anda, titik. Query ke folder tenant lain diblokir di sisi database.</p>
+        <h3>🇮🇩 Berdaulat &amp; siap audit</h3>
+        <p>Data tersimpan dan diproses di Indonesia. Untuk organisasi dengan kebijakan
+        residensi data, ini bisa dipenuhi — bukan janji di atas kertas.</p>
       </div>
       <div class="feature-card">
-        <h3>📜 TLS &amp; mTLS</h3>
-        <p>Perangkat terenkripsi end-to-end: TLS dengan password untuk rumah, mutual TLS dengan
-        certificate per perangkat untuk instalasi serius.</p>
+        <h3>🛡️ Privasi by default</h3>
+        <p>Tidak ada pengenalan wajah di ruang publik, tidak ada video yang meninggalkan
+        perangkat tanpa perlu. Isolasi antar tenant ditegakkan di layer data, bukan di tampilan.</p>
       </div>
       <div class="feature-card">
-        <h3>🏠 Data Anda tetap milik Anda</h3>
-        <p>Arsip tersimpan sebagai file parquet terbuka — format standar, bukan lock-in.
-        Unduh kapan saja lewat file browser.</p>
+        <h3>📜 Enkripsi &amp; identitas per perangkat</h3>
+        <p>TLS untuk perangkat gedung, mutual TLS dengan sertifikat per perangkat untuk
+        instalasi serius. Setiap perangkat punya identitas dan batas izinnya sendiri.</p>
       </div>
     </div>
   </div>
@@ -207,8 +232,10 @@
 <!-- CTA -->
 <section class="cta">
   <div class="container">
-    <h2>Mulai dari satu sensor hari ini.</h2>
-    <p>Daftar, sambungkan perangkat pertama, dan lihat data Anda hidup dalam hitungan menit.</p>
+    <p class="kicker">JUJUR SOAL KESIAPAN</p>
+    <h2>Mulai dari satu panel listrik.</h2>
+    <p>Yang sudah berjalan kami tawarkan; yang sedang dibangun kami katakan sedang dibangun.
+    Mulai dari satu meter hari ini — jawaban atas pertanyaan pertama Anda bisa jadi minggu ini.</p>
     <a href="https://explore.ter.asia" class="btn btn-primary btn-lg">Buka Portal Terasia</a>
   </div>
 </section>
@@ -218,7 +245,7 @@
   <div class="container footer-inner">
     <div>
       <span class="logo">Tera<span class="logo-accent">sia</span></span>
-      <p class="footer-tag">IoT analytics untuk pasar Indonesia.</p>
+      <p class="footer-tag">Dari data perangkat jadi keputusan bisnis. Untuk Indonesia.</p>
     </div>
     <div class="footer-links">
       <a href="https://explore.ter.asia">Portal</a>
