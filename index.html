@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terasia — Dari sensor ke keputusan. IoT analytics untuk rumah Anda</title>
+<meta name="description" content="Terasia mengumpulkan, mengarsipkan, dan menganalisis data perangkat IoT Anda — dashboard real-time, arsip yang bisa ditanya, dan asisten AI bernama Tera.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">Tera<span class="logo-accent">sia</span></a>
+    <div class="nav-links">
+      <a href="#tahapan">Tahapan</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#langkah">Cara Kerja</a>
+      <a href="#keamanan">Keamanan</a>
+    </div>
+    <a href="https://explore.ter.asia" class="btn btn-primary btn-sm">Buka Portal</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <p class="hero-kicker">MANUAL → TERHUBUNG → TERKUMPUL → AGENTIC</p>
+    <h1>Dulu sensor cuma berkedip.<br>Sekarang sensor <span class="accent">bercerita</span>.</h1>
+    <p class="hero-sub">Terasia mengumpulkan, mengarsipkan, dan menganalisis data perangkat IoT Anda —
+    dari sensor energi sampai kamera — lalu menyajikannya kembali sebagai dashboard real-time,
+    arsip jangka panjang yang bisa di-query, dan asisten AI yang bisa Anda ajak bicara.</p>
+    <div class="hero-cta">
+      <a href="https://explore.ter.asia" class="btn btn-primary">Mulai di Portal</a>
+      <a href="#langkah" class="btn btn-ghost">Lihat cara kerja</a>
+    </div>
+    <p class="hero-note">Data Anda tetap milik Anda · Isolasi per-tenant di layer data · TLS &amp; mTLS end-to-end</p>
+  </div>
+</header>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><span class="stat-num">real-time</span><span class="stat-label">sensor ke dashboard dalam hitungan detik</span></div>
+    <div class="stat"><span class="stat-num">&lt; 1 detik</span><span class="stat-label">query arsip satu hari penuh</span></div>
+    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">telemetry terarsip sebagai parquet di object storage</span></div>
+    <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">pipeline MQTT berjalan tanpa jeda</span></div>
+  </div>
+</section>
+
+<!-- TAHAPAN -->
+<section id="tahapan" class="section">
+  <div class="container">
+    <p class="kicker">PERANGKAT ANDA SUDAH SAMPAI MANA?</p>
+    <h2>Empat tahap. Kenali posisi Anda.</h2>
+    <p class="section-sub">Setiap rumah dan workshop mulai dari tempat yang sama: perangkat yang bekerja
+    sendiri-sendiri. Terasia menuntaskan tiga tahap pertama secara otomatis — tahap keempat jadi milik Anda.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-tag">TAHAP 01</span>
+        <h3>Berkedip sendiri</h3>
+        <p>Sensor, switch, dan kamera bekerja — tapi datanya menguap begitu layar perangkat berganti. Tidak ada sejarah, tidak ada pola.</p>
+        <p class="step-cost">Biaya tersembunyi: keputusan berdasar tebakan.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-tag">TAHAP 02</span>
+        <h3>Terhubung</h3>
+        <p>Semua perangkat publish ke satu broker MQTT — TLS untuk perangkat rumah, mTLS untuk perangkat produksi. Kredensial per perangkat, isolasi per tenant.</p>
+        <p class="step-cost">Ciri: satu titik masuk, nol konfigurasi manual.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-tag">TAHAP 03</span>
+        <h3>Terkumpul</h3>
+        <p>Telemetry mengalir ke dashboard real-time dan terarsip otomatis sebagai parquet — bertahun-tahun kemudian masih bisa di-query dalam hitungan detik.</p>
+        <p class="step-cost">Ciri: data lama bukan arsip mati.</p>
+      </div>
+      <div class="step-card step-card-accent">
+        <span class="step-tag">TAHAP 04</span>
+        <h3>Agentic</h3>
+        <p>Anda tidak lagi membaca grafik satu per satu. Tanya dalam bahasa biasa — "berapa kWh kemarin dibanding minggu lalu?" — asisten menjawab dengan data Anda sendiri.</p>
+        <p class="step-cost">Ciri: data mengerjakan, Anda memutuskan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FITUR -->
+<section id="fitur" class="section section-alt">
+  <div class="container">
+    <p class="kicker">SATU PLATFORM, SEMUA KEBUTUHAN TELEMETRY</p>
+    <h2>Apa yang Terasia kerjakan untuk Anda</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Dashboard real-time</h3>
+        <p>Daya, energi, suhu, kehadiran — semua sensor tampil langsung di dashboard Grafana.
+        Melihat konsumsi listrik per jam bukan lagi pekerjaan manual.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗄️</div>
+        <h3>Arsip yang hidup</h3>
+        <p>Setiap pesan telemetry dikompresi jadi parquet harian di object storage.
+        Data dua tahun lalu tetap bisa di-query — bukan cuma disimpan.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>Asisten AI "Tera"</h3>
+        <p>Tanya data dalam bahasa sehari-hari. Tera menerjemahkan pertanyaan Anda menjadi
+        query ke arsip Anda sendiri — dan hanya milik Anda.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <h3>Notebook analisis</h3>
+        <p>Untuk yang ingin menggali lebih dalam: notebook Jupyter pribadi per user,
+        langsung tersambung ke data Anda dengan isolasi penuh.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔔</div>
+        <h3>Alerting</h3>
+        <p>Atur aturan di atas telemetry Anda — daya melebihi ambang, sensor diam terlalu lama —
+        dan terima notifikasi sebelum masalah membesar.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧩</div>
+        <h3>Playground MQTT</h3>
+        <p>Publish dan listen langsung dari browser untuk uji perangkat baru —
+        tanpa install client, tanpa keluar dari portal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARA KERJA -->
+<section id="langkah" class="section">
+  <div class="container">
+    <p class="kicker">EMPAT LANGKAH. BISA DICEK.</p>
+    <h2>Dari perangkat pertama ke asisten pribadi</h2>
+    <p class="section-sub">Setiap langkah punya keluaran yang bisa Anda pegang. Tidak ada tahap yang selesai tanpa bukti.</p>
+    <div class="how-list">
+      <div class="how-item">
+        <span class="how-num">01</span>
+        <div>
+          <h3>Sambungkan perangkat</h3>
+          <p>Daftar di portal, kredensial MQTT dibuat otomatis. Perangkat rumah lewat TLS (port 8883),
+          perangkat produksi lewat mTLS dengan client certificate yang Anda terbitkan sendiri dari portal.</p>
+          <p class="how-proof">Keluaran: perangkat online di daftar device Anda.</p>
+        </div>
+      </div>
+      <div class="how-item">
+        <span class="how-num">02</span>
+        <div>
+          <h3>Data mengalir</h3>
+          <p>Telemetry masuk lewat broker MQTT, tersimpan real-time untuk dashboard dan terarsip
+          otomatis ke object storage. Anda tidak mengelola apa pun.</p>
+          <p class="how-proof">Keluaran: grafik hidup + arsip harian yang terlihat di file browser.</p>
+        </div>
+      </div>
+      <div class="how-item">
+        <span class="how-num">03</span>
+        <div>
+          <h3>Jelajahi</h3>
+          <p>Dashboard untuk memantau, notebook untuk menganalisis, file browser untuk mengunduh data mentah.
+          Semua dari satu portal, satu login.</p>
+          <p class="how-proof">Keluaran: Anda tahu apa yang sebenarnya terjadi di rumah Anda.</p>
+        </div>
+      </div>
+      <div class="how-item">
+        <span class="how-num">04</span>
+        <div>
+          <h3>Tanya Tera</h3>
+          <p>Asisten AI Tera siap menjawab pertanyaan atas data Anda sendiri — dalam bahasa Indonesia,
+          tanpa SQL, tanpa spreadsheet.</p>
+          <p class="how-proof">Keluaran: jawaban terverifikasi dari data Anda, bukan tebakan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEAMANAN -->
+<section id="keamanan" class="section section-alt">
+  <div class="container">
+    <p class="kicker">DATA RUMAH ADALAH DATA PRIBADI</p>
+    <h2>Keamanan bukan fitur tambahan</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>🔐 Isolasi per tenant</h3>
+        <p>Data Anda difilter di layer server — bukan cuma di tampilan. Tenant lain tidak bisa membaca
+        topik Anda, titik. Query ke folder tenant lain diblokir di sisi database.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📜 TLS &amp; mTLS</h3>
+        <p>Perangkat terenkripsi end-to-end: TLS dengan password untuk rumah, mutual TLS dengan
+        certificate per perangkat untuk instalasi serius.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🏠 Data Anda tetap milik Anda</h3>
+        <p>Arsip tersimpan sebagai file parquet terbuka — format standar, bukan lock-in.
+        Unduh kapan saja lewat file browser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Mulai dari satu sensor hari ini.</h2>
+    <p>Daftar, sambungkan perangkat pertama, dan lihat data Anda hidup dalam hitungan menit.</p>
+    <a href="https://explore.ter.asia" class="btn btn-primary btn-lg">Buka Portal Terasia</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <span class="logo">Tera<span class="logo-accent">sia</span></span>
+      <p class="footer-tag">IoT analytics untuk pasar Indonesia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://explore.ter.asia">Portal</a>
+      <a href="https://mqtt.ter.asia">MQTT</a>
+    </div>
+  </div>
+  <div class="container footer-copy">© 2026 Terasia</div>
+</footer>
+
+</body>
+</html>
