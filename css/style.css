@@ -81,6 +81,7 @@ body {
   font-size: 0.95rem; line-height: 1.7;
   color: var(--text-dim);
 }
+.mission-sub + .mission-sub { margin-top: 10px; }
 
 /* STATS */
 .stats { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-alt); }
