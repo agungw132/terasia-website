@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terasia — Dari data perangkat jadi keputusan bisnis</title>
-<meta name="description" content="Terasia mengubah data sensor, meter, dan kamera menjadi keputusan bisnis: energi terkendali, occupancy ramah privasi, dan jawaban atas pertanyaan Anda dalam Bahasa Indonesia — dengan data yang tetap berdaulat di Indonesia.">
+<title>Terasia — Data IoT, cukup tanya.</title>
+<meta name="description" content="Terasia membuat data IoT berbicara: gabungkan sensor, dokumen, dan data bisnis dalam satu workspace — cukup tanya dalam Bahasa Indonesia, chatbot membuatkan dashboard dan alert-nya. Data tetap berdaulat di Indonesia.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 </head>
@@ -15,12 +15,11 @@
   <div class="container nav-inner">
     <a href="#" class="logo">Tera<span class="logo-accent">sia</span></a>
     <div class="nav-links">
-      <a href="#masalah">Masalah</a>
       <a href="#workspace">Workspace</a>
       <a href="#nilai">Nilai</a>
-      <a href="#segmen">Untuk Siapa</a>
+      <a href="#developer">Developer</a>
       <a href="#langkah">Cara Kerja</a>
-      <a href="#keamanan">Keamanan</a>
+      <a href="#faq">FAQ</a>
     </div>
     <a href="https://explore.ter.asia" class="btn btn-primary btn-sm">Buka Portal</a>
   </div>
@@ -29,18 +28,42 @@
 <!-- HERO -->
 <header class="hero">
   <div class="container">
-    <p class="hero-kicker">DATA PERANGKAT → KEPUTUSAN BISNIS</p>
-    <h1>Data perangkat Anda sudah ada.<br>Sekarang buat dia <span class="accent">bekerja</span>.</h1>
-    <p class="hero-sub">Terasia membuat <em>data IoT berbicara</em>: sensor, meter, dan kamera Anda
-    terhubung dengan dokumen serta data bisnis dalam satu workspace — lalu cukup bertanya dalam
-    Bahasa Indonesia, atau minta chatbot membuatkan dashboard dan alert-nya.</p>
+    <h1>Data IoT Anda sudah ada.<br><span class="serif accent">Sekarang biarkan ia bicara.</span></h1>
+    <svg class="flourish" viewBox="0 0 420 14" fill="none" aria-hidden="true">
+      <path d="M4 9 C 90 2, 200 2, 416 8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <path d="M40 12 C 150 7, 260 7, 380 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+    <p class="hero-sub">Gabungkan sensor, meter, kamera, dokumen, dan data bisnis dalam satu workspace —
+    lalu cukup tanya dalam Bahasa Indonesia. Chatbot menjawab, membuatkan dashboard,
+    memasang alert, sampai melatih dan men-deploy model AI ke perangkat edge.</p>
     <div class="hero-cta">
       <a href="https://explore.ter.asia" class="btn btn-primary">Mulai di Portal</a>
-      <a href="#masalah" class="btn btn-ghost">Kenali masalahnya</a>
+      <a href="#demo" class="btn btn-ghost">Lihat contohnya</a>
     </div>
     <p class="hero-note">Untuk pengelola gedung &amp; fasilitas · Ruang publik · Industri ringan · Integrator sistem</p>
   </div>
 </header>
+
+<!-- DEMO CHAT -->
+<section id="demo" class="demo-wrap">
+  <div class="container">
+    <div class="chat-demo">
+      <div class="chat-head">
+        <span class="chat-dot"></span><span class="chat-dot"></span><span class="chat-dot"></span>
+        <span class="chat-title">workspace — tanya datanya</span>
+      </div>
+      <div class="msg user">Berapa kWh lantai 3 minggu ini dibanding minggu lalu?</div>
+      <div class="msg ai">Lantai 3 minggu ini <strong>2.184 kWh</strong>, naik <strong>12%</strong> dari 1.950 kWh
+      minggu lalu. Pemicu utamanya AC lantai 3C — konsumsinya naik 31% sejak Selasa.</div>
+      <div class="msg ai">Mau saya buatkan dashboard pemantauan per panel sekaligus alert kalau
+      konsumsi lantai 3 lewat ambang?</div>
+      <div class="msg user">Ya. Alert-nya kirim ke Slack #ops.</div>
+      <div class="msg ai ok">✓ Dashboard <strong>Energi per Panel</strong> aktif. Alert terpasang —
+      notifikasi ke <strong>#ops</strong> jika konsumsi &gt; 2.500 kWh/minggu.</div>
+    </div>
+    <p class="demo-caption">Semua di atas: satu workspace, tanpa SQL, tanpa menunggu laporan.</p>
+  </div>
+</section>
 
 <!-- MISI -->
 <section class="mission">
@@ -64,8 +87,7 @@
 <!-- MASALAH -->
 <section id="masalah" class="section">
   <div class="container">
-    <p class="kicker">MASALAH YANG KAMI LIHAT BERULANG</p>
-    <h2>Perangkat sudah pintar.<br>Kenapa biayanya tetap naik?</h2>
+    <h2 class="statement">Perangkat sudah pintar.<br>Kenapa biayanya tetap naik?</h2>
     <div class="steps-grid">
       <div class="step-card">
         <span class="step-tag">ENERGI</span>
@@ -102,8 +124,7 @@
 <!-- WORKSPACE -->
 <section id="workspace" class="section section-alt">
   <div class="container">
-    <p class="kicker">INILAH CARA MISI INI BEKERJA</p>
-    <h2>Satu workspace. Semua data berbicara.</h2>
+    <h2 class="statement">Satu workspace.<br>Semua data berbicara.</h2>
     <div class="steps-grid">
       <div class="step-card">
         <span class="step-tag">LANGKAH 1 · HUBUNGKAN</span>
@@ -140,10 +161,9 @@
 </section>
 
 <!-- NILAI -->
-<section id="nilai" class="section section-alt">
+<section id="nilai" class="section">
   <div class="container">
-    <p class="kicker">SATU PLATFORM, DARI SENSOR SAMPAI KEPUTUSAN</p>
-    <h2>Terasia menjawab kebutuhan bisnis,<br>bukan sekadar menyajikan grafik.</h2>
+    <h2 class="statement">Nilai bisnis, bukan sekadar grafik.</h2>
     <div class="feature-grid">
       <div class="feature-card">
         <div class="feature-icon">💰</div>
@@ -200,10 +220,9 @@
 </section>
 
 <!-- SEGMEN -->
-<section id="segmen" class="section">
+<section id="segmen" class="section section-alt">
   <div class="container">
-    <p class="kicker">DIPAKAI SIAPA</p>
-    <h2>Dirancang untuk yang mengelola aset fisik</h2>
+    <h2 class="statement">Dirancang untuk yang mengelola aset fisik.</h2>
     <div class="steps-grid">
       <div class="step-card">
         <h3>🏢 Gedung &amp; fasilitas</h3>
@@ -229,12 +248,29 @@
   </div>
 </section>
 
+<!-- DEVELOPER -->
+<section id="developer" class="section">
+  <div class="container">
+    <h2 class="statement">Mau atur sendiri?<br>Ada MQTT &amp; API-nya.</h2>
+    <p class="section-sub">Semua yang bisa dilakukan lewat chatbot juga bisa dilakukan secara programatis:
+    perangkat publish telemetry lewat MQTT terenkripsi, dan seluruh kemampuan workspace
+    dapat diakses lewat API portal. Tanpa membuat app di pihak ketiga, tanpa menunggu approval.</p>
+    <div class="codeblock">
+      <div class="code-head">telemetry perangkat → workspace</div>
+      <pre>mosquitto_pub -h mqtt.ter.asia -p 8883 \
+  -u u_7f3a9c1d -P "$MQTT_PASSWORD" \
+  -t t/7f3a9c1d/energy/panel-3c \
+  -m '{"power_w": 1420, "kwh_total": 2184.7}'</pre>
+    </div>
+    <p class="code-note">TLS per perangkat · mTLS + client certificate untuk instalasi produksi ·
+    isolasi per tenant ditegakkan di layer data. Detail koneksi ada di portal.</p>
+  </div>
+</section>
+
 <!-- CARA KERJA -->
 <section id="langkah" class="section section-alt">
   <div class="container">
-    <p class="kicker">DARI PASANG SAMPAI BERNILAI</p>
-    <h2>Empat langkah. Bisa dicek.</h2>
-    <p class="section-sub">Setiap langkah punya keluaran yang bisa Anda pegang — tidak ada tahap yang selesai tanpa bukti.</p>
+    <h2 class="statement">Dari pasang sampai bernilai.<br>Setiap langkah, bisa dicek.</h2>
     <div class="how-list">
       <div class="how-item">
         <span class="how-num">01</span>
@@ -293,8 +329,7 @@
 <!-- KEAMANAN -->
 <section id="keamanan" class="section">
   <div class="container">
-    <p class="kicker">ALASAN BISNIS, BUKAN SEKADAR SYARAT TEKNIS</p>
-    <h2>Keamanan &amp; kedaulatan data</h2>
+    <h2 class="statement">Keamanan &amp; kedaulatan data —<br>alasan bisnis, bukan syarat teknis.</h2>
     <div class="feature-grid">
       <div class="feature-card">
         <h3>🇮🇩 Berdaulat &amp; siap audit</h3>
@@ -315,10 +350,48 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="section section-alt">
+  <div class="container">
+    <h2 class="statement">Yang sering ditanyakan.</h2>
+    <div class="faq">
+      <details>
+        <summary>Perangkat apa yang didukung?</summary>
+        <p>ESP32, ESP8266, dan Raspberry Pi (varian lain menyusul), plus perangkat yang sudah
+        berjalan Tasmota atau ESPHome. Onboard dilakukan langsung dari portal — sambungkan via
+        USB, flash firmware dan konfigurasi dari browser, tanpa install tool tambahan.</p>
+      </details>
+      <details>
+        <summary>Data saya disimpan di mana, dan apakah aman?</summary>
+        <p>Di Indonesia, pada infrastruktur kami. Isolasi antar tenant ditegakkan di layer data
+        (bukan hanya di tampilan), koneksi perangkat terenkripsi TLS/mTLS, dan arsip tersimpan
+        sebagai format terbuka yang bisa Anda ekspor penuh kapan saja.</p>
+      </details>
+      <details>
+        <summary>Apakah saya perlu tim data atau bisa coding?</summary>
+        <p>Tidak. Seluruh alur — bertanya, membuat dashboard, memasang alert — dilakukan lewat
+        percakapan dalam Bahasa Indonesia. Untuk developer, semua kemampuan yang sama juga
+        dapat diakses lewat MQTT dan API portal.</p>
+      </details>
+      <details>
+        <summary>Data enterprise apa yang bisa digabungkan dengan data IoT?</summary>
+        <p>Unstructured: SharePoint, Google Workspace, Confluence, OneNote, Notion, email, PDF.
+        Structured: warehouse, database relasional &amp; NoSQL, time-series, spreadsheet, API.
+        Dataset lain milik Anda (BYOD) juga bisa dibawa masuk ke analitik yang sama.</p>
+      </details>
+      <details>
+        <summary>Bagaimana cara memulai?</summary>
+        <p>Daftar di portal, onboard perangkat pertama, dan tanyakan sesuatu tentang datanya —
+        semuanya bisa dicoba langsung. Untuk kebutuhan gedung, fasilitas, atau proyek integrator
+        berskala lebih besar, hubungi kami dari portal.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta">
   <div class="container">
-    <p class="kicker">JUJUR SOAL KESIAPAN</p>
     <h2>Mulai dari satu panel listrik.</h2>
     <p>Yang sudah berjalan kami tawarkan; yang sedang dibangun kami katakan sedang dibangun.
     Mulai dari satu meter hari ini — jawaban atas pertanyaan pertama Anda bisa jadi minggu ini.</p>

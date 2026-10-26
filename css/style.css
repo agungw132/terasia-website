@@ -55,13 +55,51 @@ body {
 .btn-lg { padding: 16px 32px; font-size: 1.05rem; }
 
 /* HERO */
-.hero { padding: 96px 0 72px; text-align: center; }
-.hero-kicker { color: var(--accent); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em; margin-bottom: 20px; }
+.hero { padding: 96px 0 56px; text-align: center; }
 .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
+.serif {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic; font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.flourish {
+  display: block; width: min(420px, 70vw); margin: 6px auto 0;
+  color: var(--accent);
+}
 .accent { color: var(--accent); }
 .hero-sub { max-width: 680px; margin: 24px auto 0; color: var(--text-dim); font-size: 1.125rem; }
 .hero-cta { margin-top: 36px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .hero-note { margin-top: 24px; color: var(--text-dim); font-size: 0.85rem; }
+
+/* DEMO CHAT */
+.demo-wrap { padding: 8px 0 40px; }
+.chat-demo {
+  max-width: 720px; margin: 0 auto;
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 0 20px 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+.chat-head {
+  display: flex; align-items: center; gap: 6px;
+  padding: 14px 4px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
+}
+.chat-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
+.chat-title { margin-left: 10px; color: var(--text-dim); font-size: 0.8rem; }
+.msg {
+  max-width: 82%; padding: 10px 14px; border-radius: 12px;
+  font-size: 0.92rem; line-height: 1.55; margin-bottom: 10px;
+}
+.msg.user {
+  margin-left: auto; background: var(--accent); color: hsl(222 47% 8%);
+  border-bottom-right-radius: 4px; font-weight: 500;
+}
+.msg.ai {
+  background: var(--bg-alt); border: 1px solid var(--border); color: var(--text);
+  border-bottom-left-radius: 4px;
+}
+.msg.ai strong { color: var(--accent); }
+.msg.ai.ok { border-color: hsl(217 91% 60% / 0.45); }
+.demo-caption { text-align: center; color: var(--text-dim); font-size: 0.85rem; margin-top: 14px; }
 
 /* MISI */
 .mission {
@@ -95,7 +133,43 @@ body {
 .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .kicker { color: var(--accent); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; margin-bottom: 12px; }
 .section h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
-.section-sub { color: var(--text-dim); max-width: 640px; margin-top: 14px; }
+.statement {
+  font-size: clamp(1.9rem, 4.5vw, 2.8rem); font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 40px;
+}
+.section-sub { color: var(--text-dim); max-width: 640px; margin: 14px 0 28px; }
+
+/* DEVELOPER / CODE */
+.codeblock {
+  max-width: 720px; margin-top: 8px;
+  background: #0a0e14; border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden;
+}
+.code-head {
+  padding: 10px 16px; font-size: 0.78rem; color: var(--text-dim);
+  border-bottom: 1px solid var(--border); background: var(--card);
+}
+.codeblock pre {
+  padding: 18px 16px; overflow-x: auto;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.85rem; line-height: 1.6; color: hsl(210 40% 88%);
+}
+.code-note { color: var(--text-dim); font-size: 0.85rem; margin-top: 14px; max-width: 640px; }
+
+/* FAQ */
+.faq { max-width: 760px; margin-top: 8px; }
+.faq details {
+  border-bottom: 1px solid var(--border); padding: 6px 0;
+}
+.faq summary {
+  cursor: pointer; list-style: none;
+  font-size: 1.05rem; font-weight: 600; padding: 16px 0;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--accent); font-size: 1.3rem; font-weight: 400; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { color: var(--text-dim); padding: 0 0 18px; line-height: 1.7; }
 
 /* TAHAPAN (step cards) */
 .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 44px; }
