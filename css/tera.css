@@ -1,0 +1,64 @@
+/* Tera — asisten AI ter.asia (widget chat) */
+.tera-fab {
+  position: fixed; right: 20px; bottom: 20px; z-index: 1000;
+  width: 58px; height: 58px; border-radius: 50%;
+  border: none; cursor: pointer;
+  background: var(--accent); color: hsl(222 47% 8%);
+  font-size: 1.35rem; font-weight: 700;
+  box-shadow: 0 8px 30px hsl(217 91% 60% / 0.4);
+  transition: transform 0.15s;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.tera-fab:hover { transform: scale(1.08); }
+
+.tera-panel {
+  position: fixed; right: 20px; bottom: 90px; z-index: 1001;
+  width: min(380px, calc(100vw - 40px));
+  height: min(520px, calc(100vh - 130px));
+  display: none; flex-direction: column;
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.tera-panel.open { display: flex; }
+
+.tera-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px; border-bottom: 1px solid var(--border); background: var(--bg-alt);
+}
+.tera-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--accent); color: hsl(222 47% 8%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif; font-style: italic; font-weight: 700;
+}
+.tera-head-name { font-weight: 700; font-size: 0.95rem; }
+.tera-head-sub { font-size: 0.75rem; color: var(--text-dim); }
+.tera-close {
+  margin-left: auto; background: none; border: none; cursor: pointer;
+  color: var(--text-dim); font-size: 1.4rem; line-height: 1; padding: 4px;
+}
+.tera-close:hover { color: var(--text); }
+
+.tera-msgs { flex: 1; overflow-y: auto; padding: 16px 14px; display: flex; flex-direction: column; gap: 10px; }
+.tera-msg {
+  max-width: 85%; padding: 10px 13px; border-radius: 12px;
+  font-size: 0.9rem; line-height: 1.55; white-space: pre-wrap; word-break: break-word;
+}
+.tera-msg.user { align-self: flex-end; background: var(--accent); color: hsl(222 47% 8%); border-bottom-right-radius: 4px; }
+.tera-msg.bot { align-self: flex-start; background: var(--bg-alt); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+.tera-msg.typing { color: var(--text-dim); font-style: italic; }
+
+.tera-form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border); background: var(--bg-alt); }
+.tera-input {
+  flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+  color: var(--text); padding: 10px 12px; font-size: 0.9rem; font-family: inherit;
+  outline: none;
+}
+.tera-input:focus { border-color: var(--accent); }
+.tera-send {
+  background: var(--accent); color: hsl(222 47% 8%); border: none; border-radius: 10px;
+  padding: 0 16px; font-weight: 700; cursor: pointer; font-size: 0.9rem;
+}
+.tera-send:disabled { opacity: 0.5; cursor: default; }

@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terasia — Dari sensor ke keputusan. IoT analytics untuk rumah Anda</title>
-<meta name="description" content="Terasia mengumpulkan, mengarsipkan, dan menganalisis data perangkat IoT Anda — dashboard real-time, arsip yang bisa ditanya, dan asisten AI bernama Tera.">
+<title>Terasia — Data IoT, cukup tanya.</title>
+<meta name="description" content="Terasia membuat data IoT berbicara: gabungkan sensor, dokumen, dan data bisnis dalam satu workspace — cukup tanya dalam Bahasa Indonesia, chatbot membuatkan dashboard dan alert-nya. Data tetap berdaulat di Indonesia.">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tera.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 </head>
 <body>
@@ -15,10 +16,12 @@
   <div class="container nav-inner">
     <a href="#" class="logo">Tera<span class="logo-accent">sia</span></a>
     <div class="nav-links">
-      <a href="#tahapan">Tahapan</a>
-      <a href="#fitur">Fitur</a>
+      <a href="#workspace">Workspace</a>
+      <a href="#nilai">Nilai</a>
+      <a href="#developer">Developer</a>
       <a href="#langkah">Cara Kerja</a>
-      <a href="#keamanan">Keamanan</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://docs.ter.asia">Dokumentasi</a>
     </div>
     <a href="https://explore.ter.asia" class="btn btn-primary btn-sm">Buka Portal</a>
   </div>
@@ -27,152 +30,328 @@
 <!-- HERO -->
 <header class="hero">
   <div class="container">
-    <p class="hero-kicker">MANUAL → TERHUBUNG → TERKUMPUL → AGENTIC</p>
-    <h1>Dulu sensor cuma berkedip.<br>Sekarang sensor <span class="accent">bercerita</span>.</h1>
-    <p class="hero-sub">Terasia mengumpulkan, mengarsipkan, dan menganalisis data perangkat IoT Anda —
-    dari sensor energi sampai kamera — lalu menyajikannya kembali sebagai dashboard real-time,
-    arsip jangka panjang yang bisa di-query, dan asisten AI yang bisa Anda ajak bicara.</p>
+    <h1>Data IoT Anda sudah ada.<br><span class="serif accent">Sekarang biarkan ia bicara.</span></h1>
+    <svg class="flourish" viewBox="0 0 420 14" fill="none" aria-hidden="true">
+      <path d="M4 9 C 90 2, 200 2, 416 8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <path d="M40 12 C 150 7, 260 7, 380 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+    <p class="hero-sub">Gabungkan sensor, meter, kamera, dokumen, dan data bisnis dalam satu workspace —
+    lalu cukup tanya dalam Bahasa Indonesia. Chatbot menjawab, membuatkan dashboard,
+    memasang alert, sampai melatih dan men-deploy model AI ke perangkat edge.</p>
     <div class="hero-cta">
       <a href="https://explore.ter.asia" class="btn btn-primary">Mulai di Portal</a>
-      <a href="#langkah" class="btn btn-ghost">Lihat cara kerja</a>
+      <a href="#demo" class="btn btn-ghost">Lihat contohnya</a>
     </div>
-    <p class="hero-note">Data Anda tetap milik Anda · Isolasi per-tenant di layer data · TLS &amp; mTLS end-to-end</p>
+    <p class="hero-note">Untuk pengelola gedung &amp; fasilitas · Ruang publik · Industri ringan · Integrator sistem</p>
   </div>
 </header>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="container stats-grid">
-    <div class="stat"><span class="stat-num">real-time</span><span class="stat-label">sensor ke dashboard dalam hitungan detik</span></div>
-    <div class="stat"><span class="stat-num">&lt; 1 detik</span><span class="stat-label">query arsip satu hari penuh</span></div>
-    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">telemetry terarsip sebagai parquet di object storage</span></div>
-    <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">pipeline MQTT berjalan tanpa jeda</span></div>
+<!-- DEMO CHAT -->
+<section id="demo" class="demo-wrap">
+  <div class="container">
+    <div class="chat-demo">
+      <div class="chat-head">
+        <span class="chat-dot"></span><span class="chat-dot"></span><span class="chat-dot"></span>
+        <span class="chat-title">workspace — tanya datanya</span>
+      </div>
+      <div class="msg user">Berapa kWh lantai 3 minggu ini dibanding minggu lalu?</div>
+      <div class="msg ai">Lantai 3 minggu ini <strong>2.184 kWh</strong>, naik <strong>12%</strong> dari 1.950 kWh
+      minggu lalu. Pemicu utamanya AC lantai 3C — konsumsinya naik 31% sejak Selasa.</div>
+      <div class="msg ai">Mau saya buatkan dashboard pemantauan per panel sekaligus alert kalau
+      konsumsi lantai 3 lewat ambang?</div>
+      <div class="msg user">Ya. Alert-nya kirim ke Slack #ops.</div>
+      <div class="msg ai ok">✓ Dashboard <strong>Energi per Panel</strong> aktif. Alert terpasang —
+      notifikasi ke <strong>#ops</strong> jika konsumsi &gt; 2.500 kWh/minggu.</div>
+    </div>
+    <p class="demo-caption">Semua di atas: satu workspace, tanpa SQL, tanpa menunggu laporan.</p>
   </div>
 </section>
 
-<!-- TAHAPAN -->
-<section id="tahapan" class="section">
+<!-- MISI -->
+<section class="mission">
   <div class="container">
-    <p class="kicker">PERANGKAT ANDA SUDAH SAMPAI MANA?</p>
-    <h2>Empat tahap. Kenali posisi Anda.</h2>
-    <p class="section-sub">Setiap rumah dan workshop mulai dari tempat yang sama: perangkat yang bekerja
-    sendiri-sendiri. Terasia menuntaskan tiga tahap pertama secara otomatis — tahap keempat jadi milik Anda.</p>
+    <p class="kicker">MISI KAMI</p>
+    <p class="mission-text">Membuat <strong>data IoT berbicara</strong> — interaksi natural dengan data
+    (LLM) dan advanced analytics yang menggabungkan IoT dengan data enterprise Anda:
+    <strong>unstructured</strong> (SharePoint, Google Workspace, Confluence, OneNote, Notion, email, PDF),
+    <strong>structured</strong> (warehouse, relational &amp; NoSQL, time-series, spreadsheet, API),
+    <strong>BYOD</strong> (bring your own data), dan model ML/DL — <strong>dalam satu workspace</strong>.</p>
+    <p class="mission-sub">Dashboard dan alert multi-channel (email, Microsoft Teams, Slack, Telegram,
+    webhook) dibuat langsung dari diskusi dengan chatbot. Onboard perangkat dari portal:
+    ESP32, ESP8266, Raspberry Pi, dan varian lain — flash firmware &amp; konfigurasi via browser.</p>
+    <p class="mission-sub">Model AI dari awal atau transfer learning dari model repository kami —
+    people counting, object detection, anomaly detection, predictive maintenance,
+    face recognition (area privat/terkontrol) — deploy ke edge dari workspace yang sama,
+    dengan OTA upgrade seluruh perangkat.</p>
+  </div>
+</section>
+
+<!-- SNAPSHOOT PORTAL -->
+<section id="galeri" class="section section-alt">
+  <div class="container">
+    <h2 class="statement">Bukan mockup.<br>Ini tampilan asli portalnya.</h2>
+    <div class="shots">
+      <figure class="shot">
+        <div class="shot-bar"><span></span><span></span><span></span></div>
+        <img src="assets/portal-login.png" alt="Login portal explore.ter.asia" loading="lazy">
+        <figcaption>Portal explore.ter.asia — login Google atau email. Setiap akun otomatis punya workspace terpisah.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot-bar"><span></span><span></span><span></span></div>
+        <img src="assets/portal-mqtt-guide.png" alt="Panduan MQTT client di portal" loading="lazy">
+        <figcaption><strong>Guideline MQTT client</strong> — kredensial per perangkat, TLS 8883, isolasi topik per tenant ditegakkan broker.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot-bar"><span></span><span></span><span></span></div>
+        <img src="assets/portal-chat.png" alt="Chat Data di portal — tanya jawab data dalam Bahasa Indonesia" loading="lazy">
+        <figcaption><strong>Chat Data</strong> — tanya data dalam Bahasa Indonesia, langsung dari arsip tenant Anda: rangkuman, grafik, sampai keputusan.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot-bar"><span></span><span></span><span></span></div>
+        <img src="assets/portal-panel.png" alt="MQTT Panel di portal" loading="lazy">
+        <figcaption><strong>Satu portal, semua fitur</strong> — onboard perangkat, MQTT panel &amp; playground, Grafana, chat data. Semua dari satu login.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- MASALAH -->
+<section id="masalah" class="section">
+  <div class="container">
+    <h2 class="statement">Perangkat sudah pintar.<br>Kenapa biayanya tetap naik?</h2>
     <div class="steps-grid">
       <div class="step-card">
-        <span class="step-tag">TAHAP 01</span>
-        <h3>Berkedip sendiri</h3>
-        <p>Sensor, switch, dan kamera bekerja — tapi datanya menguap begitu layar perangkat berganti. Tidak ada sejarah, tidak ada pola.</p>
-        <p class="step-cost">Biaya tersembunyi: keputusan berdasar tebakan.</p>
+        <span class="step-tag">ENERGI</span>
+        <h3>Tagihan datang, kejutan ikut</h3>
+        <p>Konsumsi listrik naik — tapi tidak ada yang tahu panel atau lantai mana penyebabnya.
+        Baru sadar setelah tagihan terbit, saat penghematan sudah terlambat.</p>
+        <p class="step-cost">Biaya: pemborosan yang tidak pernah terdeteksi.</p>
       </div>
       <div class="step-card">
-        <span class="step-tag">TAHAP 02</span>
-        <h3>Terhubung</h3>
-        <p>Semua perangkat publish ke satu broker MQTT — TLS untuk perangkat rumah, mTLS untuk perangkat produksi. Kredensial per perangkat, isolasi per tenant.</p>
-        <p class="step-cost">Ciri: satu titik masuk, nol konfigurasi manual.</p>
+        <span class="step-tag">DATA</span>
+        <h3>Dashboard yang tidak ditonton</h3>
+        <p>Data berhenti di grafik. Tidak ada peringatan dini, tidak ada laporan rutin,
+        tidak ada tindakan. Membaca grafik pun jadi pekerjaan sampingan yang tak selesai.</p>
+        <p class="step-cost">Biaya: tim data sendiri, atau proyek kustom yang mahal.</p>
       </div>
       <div class="step-card">
-        <span class="step-tag">TAHAP 03</span>
-        <h3>Terkumpul</h3>
-        <p>Telemetry mengalir ke dashboard real-time dan terarsip otomatis sebagai parquet — bertahun-tahun kemudian masih bisa di-query dalam hitungan detik.</p>
-        <p class="step-cost">Ciri: data lama bukan arsip mati.</p>
+        <span class="step-tag">PRIVASI</span>
+        <h3>Occupancy tanpa melanggar privasi</h3>
+        <p>Anda butuh data keramaian pengunjung — tapi face recognition berisiko secara hukum
+        (UU PDP) dan reputasi. Jadi keputusan soal ruang berjalan tanpa data.</p>
+        <p class="step-cost">Biaya: keputusan berdasar perasaan.</p>
       </div>
-      <div class="step-card step-card-accent">
-        <span class="step-tag">TAHAP 04</span>
-        <h3>Agentic</h3>
-        <p>Anda tidak lagi membaca grafik satu per satu. Tanya dalam bahasa biasa — "berapa kWh kemarin dibanding minggu lalu?" — asisten menjawab dengan data Anda sendiri.</p>
-        <p class="step-cost">Ciri: data mengerjakan, Anda memutuskan.</p>
+      <div class="step-card">
+        <span class="step-tag">INTEGRATOR</span>
+        <h3>Stack dibangun ulang tiap proyek</h3>
+        <p>Platform untuk klien A tidak bisa dipakai untuk klien B. Setiap proyek membangun
+        pipeline, dashboard, dan user management yang sama dari nol.</p>
+        <p class="step-cost">Biaya: margin termakan pekerjaan berulang.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FITUR -->
-<section id="fitur" class="section section-alt">
+<!-- WORKSPACE -->
+<section id="workspace" class="section section-alt">
   <div class="container">
-    <p class="kicker">SATU PLATFORM, SEMUA KEBUTUHAN TELEMETRY</p>
-    <h2>Apa yang Terasia kerjakan untuk Anda</h2>
+    <h2 class="statement">Satu workspace.<br>Semua data berbicara.</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-tag">LANGKAH 1 · HUBUNGKAN</span>
+        <h3>Semua data masuk ke satu tempat</h3>
+        <p>Data IoT — sensor, meter, kamera — bertemu dengan data enterprise Anda:
+        dokumen &amp; unstructured (SharePoint, Google Workspace, Confluence, Notion, email, PDF)
+        serta structured (warehouse, database relasional &amp; NoSQL, time-series, spreadsheet, API).
+        Dataset milik Anda sendiri (BYOD) pun bisa dibawa masuk sebagai sumber analitik.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-tag">LANGKAH 2 · DISKUSIKAN</span>
+        <h3>Anda cukup berbicara</h3>
+        <p>Tanya dalam Bahasa Indonesia — "bandingkan konsumsi energi lantai 3 bulan ini
+        dengan target di dokumen OKR". Chatbot menjawab dengan menggabungkan seluruh data tersebut,
+        diperkaya model ML/DL untuk analitik lanjutan.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-tag">LANGKAH 3 · WAJUDKAN</span>
+        <h3>Diskusi menjadi artefak</h3>
+        <p>Hasil diskusi tidak berhenti sebagai jawaban: jadikan dashboard, pasang alert
+        multi-channel (email, Microsoft Teams, Slack, Telegram, webhook), atau analitik rutin —
+        langsung dari percakapan yang sama.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-tag">LANGKAH 4 · LATIH &amp; DEPLOY</span>
+        <h3>Model AI milik Anda, sampai ke edge</h3>
+        <p>Bangun model ML/DL dari awal atau transfer learning dari model repository kami —
+        people counting, object detection, anomaly detection, predictive maintenance —
+        lalu deploy ke perangkat edge dari workspace yang sama. Pembaruan versi?
+        OTA ke seluruh perangkat sekaligus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NILAI -->
+<section id="nilai" class="section">
+  <div class="container">
+    <h2 class="statement">Nilai bisnis, bukan sekadar grafik.</h2>
     <div class="feature-grid">
       <div class="feature-card">
-        <div class="feature-icon">📈</div>
-        <h3>Dashboard real-time</h3>
-        <p>Daya, energi, suhu, kehadiran — semua sensor tampil langsung di dashboard Grafana.
-        Melihat konsumsi listrik per jam bukan lagi pekerjaan manual.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🗄️</div>
-        <h3>Arsip yang hidup</h3>
-        <p>Setiap pesan telemetry dikompresi jadi parquet harian di object storage.
-        Data dua tahun lalu tetap bisa di-query — bukan cuma disimpan.</p>
+        <div class="feature-icon">💰</div>
+        <h3>Energi terkendali</h3>
+        <p>Pantau kWh per panel dan per lantai secara live, lengkap dengan peringatan dini
+        sebelum tagihan melonjak. Efisiensi berbasis angka — bukan tebakan di rapat bulanan.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">💬</div>
-        <h3>Asisten AI "Tera"</h3>
-        <p>Tanya data dalam bahasa sehari-hari. Tera menerjemahkan pertanyaan Anda menjadi
-        query ke arsip Anda sendiri — dan hanya milik Anda.</p>
+        <h3>Dari tanya jadi dashboard</h3>
+        <p>"Berapa kWh lantai 3 minggu ini dibanding minggu lalu?" — chatbot menjawab dalam
+        Bahasa Indonesia, dan dari diskusi yang sama dashboard, alert, atau laporan rutin
+        dapat langsung dibuatkan.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔬</div>
-        <h3>Notebook analisis</h3>
-        <p>Untuk yang ingin menggali lebih dalam: notebook Jupyter pribadi per user,
-        langsung tersambung ke data Anda dengan isolasi penuh.</p>
+        <div class="feature-icon">🛡️</div>
+        <h3>Occupancy ramah privasi</h3>
+        <p>Kepadatan pengunjung per zona tanpa menyimpan wajah — video diproses di perangkat,
+        bukan dikirim ke cloud. Data keramaian tanpa risiko hukum.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔔</div>
-        <h3>Alerting</h3>
-        <p>Atur aturan di atas telemetry Anda — daya melebihi ambang, sensor diam terlalu lama —
-        dan terima notifikasi sebelum masalah membesar.</p>
+        <div class="feature-icon">🇮🇩</div>
+        <h3>Data berdaulat</h3>
+        <p>Data dan pemrosesan bisa tetap di Indonesia — termasuk model AI-nya.
+        Untuk banyak organisasi, kepatuhan ini alasan memilih, bukan sekadar syarat.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🧩</div>
-        <h3>Playground MQTT</h3>
-        <p>Publish dan listen langsung dari browser untuk uji perangkat baru —
-        tanpa install client, tanpa keluar dari portal.</p>
+        <div class="feature-icon">🔓</div>
+        <h3>Tanpa lock-in</h3>
+        <p>Arsip Anda disimpan sebagai format terbuka (Parquet) dan bisa diekspor penuh
+        kapan saja. Janji sederhana: data Anda tetap milik Anda.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏢</div>
+        <h3>Untuk integrator</h3>
+        <p>Satu platform multi-klien yang bisa di-deploy ulang untuk tiap klien —
+        model B2B2B yang menekan biaya akuisisi, dan mengubah proyek kustom (CAPEX)
+        menjadi langganan platform (OPEX).</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>Model AI tanpa tim ML</h3>
+        <p>Mulai dari model siap pakai — people counting, object detection, anomaly detection,
+        predictive maintenance — lalu transfer learning dengan data Anda. Keahlian AI tingkat
+        senior, tanpa merekrut tim AI.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📡</div>
+        <h3>Edge-native, update sekali klik</h3>
+        <p>Model dan aplikasi berjalan di perangkat edge — data sensitif tetap di lokasi.
+        Versi baru? OTA upgrade ke seluruh armada perangkat dari satu tempat.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SEGMEN -->
+<section id="segmen" class="section section-alt">
+  <div class="container">
+    <h2 class="statement">Dirancang untuk yang mengelola aset fisik.</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <h3>🏢 Gedung &amp; fasilitas</h3>
+        <p>Kantor, kampus, hotel, gedung publik — kendalikan energi dan utilitas per area,
+        dengan bukti angka untuk setiap keputusan efisiensi.</p>
+      </div>
+      <div class="step-card">
+        <h3>🏟️ Ruang publik &amp; venue</h3>
+        <p>Mall, event, transportasi — pahami kepadatan dan arus pengunjung per zona,
+        tanpa menyimpan identitas siapa pun.</p>
+      </div>
+      <div class="step-card">
+        <h3>🏭 Industri ringan</h3>
+        <p>Meter, mesin, dan utilitas produksi — deteksi anomali lebih awal,
+        sebelum gangguan jadi downtime.</p>
+      </div>
+      <div class="step-card">
+        <h3>🔗 Integrator sistem</h3>
+        <p>BMS, CCTV, IoT — satu platform untuk banyak klien, dengan deployment berulang
+        di lingkungan pilihan klien.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPER -->
+<section id="developer" class="section">
+  <div class="container">
+    <h2 class="statement">Mau atur sendiri?<br>Ada MQTT &amp; API-nya.</h2>
+    <p class="section-sub">Semua yang bisa dilakukan lewat chatbot juga bisa dilakukan secara programatis:
+    perangkat publish telemetry lewat MQTT terenkripsi, dan seluruh kemampuan workspace
+    dapat diakses lewat API portal. Tanpa membuat app di pihak ketiga, tanpa menunggu approval.</p>
+    <div class="codeblock">
+      <div class="code-head">telemetry perangkat → workspace</div>
+      <pre>mosquitto_pub -h mqtt.ter.asia -p 8883 \
+  -u u_7f3a9c1d -P "$MQTT_PASSWORD" \
+  -t t/7f3a9c1d/energy/panel-3c \
+  -m '{"power_w": 1420, "kwh_total": 2184.7}'</pre>
+    </div>
+    <p class="code-note">TLS per perangkat · mTLS + client certificate untuk instalasi produksi ·
+    isolasi per tenant ditegakkan di layer data. Detail koneksi ada di portal.</p>
   </div>
 </section>
 
 <!-- CARA KERJA -->
-<section id="langkah" class="section">
+<section id="langkah" class="section section-alt">
   <div class="container">
-    <p class="kicker">EMPAT LANGKAH. BISA DICEK.</p>
-    <h2>Dari perangkat pertama ke asisten pribadi</h2>
-    <p class="section-sub">Setiap langkah punya keluaran yang bisa Anda pegang. Tidak ada tahap yang selesai tanpa bukti.</p>
+    <h2 class="statement">Dari pasang sampai bernilai.<br>Setiap langkah, bisa dicek.</h2>
     <div class="how-list">
       <div class="how-item">
         <span class="how-num">01</span>
         <div>
           <h3>Sambungkan perangkat</h3>
-          <p>Daftar di portal, kredensial MQTT dibuat otomatis. Perangkat rumah lewat TLS (port 8883),
-          perangkat produksi lewat mTLS dengan client certificate yang Anda terbitkan sendiri dari portal.</p>
+          <p>Onboard langsung dari portal: pilih board — ESP32, ESP8266, Raspberry Pi, dan varian
+          lainnya — sambungkan via USB, flash firmware dan konfigurasi langsung dari browser.
+          Perangkat yang sudah ada (Tasmota, ESPHome) tinggal diarahkan ke satu pintu MQTT
+          terenkripsi: kredensial per perangkat, izin per tenant.</p>
           <p class="how-proof">Keluaran: perangkat online di daftar device Anda.</p>
         </div>
       </div>
       <div class="how-item">
         <span class="how-num">02</span>
         <div>
-          <h3>Data mengalir</h3>
-          <p>Telemetry masuk lewat broker MQTT, tersimpan real-time untuk dashboard dan terarsip
-          otomatis ke object storage. Anda tidak mengelola apa pun.</p>
-          <p class="how-proof">Keluaran: grafik hidup + arsip harian yang terlihat di file browser.</p>
+          <h3>Data live</h3>
+          <p>Dari pasang ke terlihat dalam hitungan menit: dashboard real-time untuk pemantauan,
+          arsip otomatis untuk sejarah. Tanpa perlu membangun tim data sendiri.</p>
+          <p class="how-proof">Keluaran: konsumsi per panel terlihat — bukan sekadar total tagihan.</p>
         </div>
       </div>
       <div class="how-item">
         <span class="how-num">03</span>
         <div>
-          <h3>Jelajahi</h3>
-          <p>Dashboard untuk memantau, notebook untuk menganalisis, file browser untuk mengunduh data mentah.
-          Semua dari satu portal, satu login.</p>
-          <p class="how-proof">Keluaran: Anda tahu apa yang sebenarnya terjadi di rumah Anda.</p>
+          <h3>Tanya &amp; pahami</h3>
+          <p>Ajak chatbot bicara dalam Bahasa Indonesia — atas data IoT Anda sendiri,
+          diperkaya dokumen dan data bisnis di workspace yang sama. Jawaban datang dari
+          data Anda, terisolasi dari tenant lain — bukan template, bukan tebakan.</p>
+          <p class="how-proof">Keluaran: jawaban atas pertanyaan bisnis, tanpa membaca grafik satu per satu.</p>
         </div>
       </div>
       <div class="how-item">
         <span class="how-num">04</span>
         <div>
-          <h3>Tanya Tera</h3>
-          <p>Asisten AI Tera siap menjawab pertanyaan atas data Anda sendiri — dalam bahasa Indonesia,
-          tanpa SQL, tanpa spreadsheet.</p>
-          <p class="how-proof">Keluaran: jawaban terverifikasi dari data Anda, bukan tebakan.</p>
+          <h3>Jadikan sistem</h3>
+          <p>Dari diskusi yang sama, minta chatbot membuatkan dashboard, alert multi-channel —
+          email, Microsoft Teams, Slack, Telegram, webhook — atau laporan rutin.
+          Masalah ketahuan sebelum tagihan atau kerusakan datang.</p>
+          <p class="how-proof">Keluaran: keputusan efisiensi dan perawatan berbasis bukti, tanpa konfigurasi yang panjang.</p>
+        </div>
+      </div>
+      <div class="how-item">
+        <span class="how-num">05</span>
+        <div>
+          <h3>Latih &amp; deploy ke edge</h3>
+          <p>Butuh lebih dari dashboard? Latih model AI — dari awal atau transfer learning dari
+          model repository kami — lalu deploy ke perangkat edge dari workspace yang sama.
+          Pembaruan model atau firmware didorong lewat OTA ke seluruh perangkat.</p>
+          <p class="how-proof">Keluaran: kecerdasan berjalan di lokasi, armada perangkat selalu versi terbaru.</p>
         </div>
       </div>
     </div>
@@ -180,26 +359,111 @@
 </section>
 
 <!-- KEAMANAN -->
-<section id="keamanan" class="section section-alt">
+<section id="keamanan" class="section">
   <div class="container">
-    <p class="kicker">DATA RUMAH ADALAH DATA PRIBADI</p>
-    <h2>Keamanan bukan fitur tambahan</h2>
+    <h2 class="statement">Keamanan &amp; kedaulatan data —<br>alasan bisnis, bukan syarat teknis.</h2>
     <div class="feature-grid">
       <div class="feature-card">
-        <h3>🔐 Isolasi per tenant</h3>
-        <p>Data Anda difilter di layer server — bukan cuma di tampilan. Tenant lain tidak bisa membaca
-        topik Anda, titik. Query ke folder tenant lain diblokir di sisi database.</p>
+        <h3>🇮🇩 Berdaulat &amp; siap audit</h3>
+        <p>Data tersimpan dan diproses di Indonesia. Untuk organisasi dengan kebijakan
+        residensi data, ini bisa dipenuhi — bukan janji di atas kertas.</p>
       </div>
       <div class="feature-card">
-        <h3>📜 TLS &amp; mTLS</h3>
-        <p>Perangkat terenkripsi end-to-end: TLS dengan password untuk rumah, mutual TLS dengan
-        certificate per perangkat untuk instalasi serius.</p>
+        <h3>🛡️ Privasi by default</h3>
+        <p>Tidak ada pengenalan wajah di ruang publik, tidak ada video yang meninggalkan
+        perangkat tanpa perlu. Isolasi antar tenant ditegakkan di layer data, bukan di tampilan.</p>
       </div>
       <div class="feature-card">
-        <h3>🏠 Data Anda tetap milik Anda</h3>
-        <p>Arsip tersimpan sebagai file parquet terbuka — format standar, bukan lock-in.
-        Unduh kapan saja lewat file browser.</p>
+        <h3>📜 Enkripsi &amp; identitas per perangkat</h3>
+        <p>TLS untuk perangkat gedung, mutual TLS dengan sertifikat per perangkat untuk
+        instalasi serius. Setiap perangkat punya identitas dan batas izinnya sendiri.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODEL BISNIS & TIM -->
+<section id="bisnis" class="section section-alt">
+  <div class="container">
+    <h2 class="statement">Model bisnis yang sederhana.<br>Tim yang membangun sendiri.</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>💳 Berlangganan, bukan proyek</h3>
+        <p>Model SaaS per workspace dan per perangkat — perangkatnya pun hardware-agnostic
+        (board komoditas, bukan hardware proprietary kami). Belanja infrastruktur dan tim AI
+        berubah dari CAPEX menjadi OPEX. Skema harga mengikuti skala Anda — hubungi kami lewat portal.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🚀 Program pilot</h3>
+        <p>Kami membuka slot pilot terpandu untuk organisasi pertama: implementasi penuh,
+        langsung didampingi tim yang membangun platform-nya. Kebutuhan integrasi Anda
+        (termasuk BMS/PLC) menjadi prioritas roadmap kami.</p>
+      </div>
+      <div class="feature-card">
+        <h3>👤 Di balik Terasia</h3>
+        <p><strong>Agung Wahyudi</strong> — founder &amp; engineer. Praktisi AI dan data engineering
+        yang membangun Terasia end-to-end: dari pipeline data perangkat, arsip analytics,
+        sampai antarmuka percakapan dan keamanan multi-tenant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section section-alt">
+  <div class="container">
+    <h2 class="statement">Yang sering ditanyakan.</h2>
+    <div class="faq">
+      <details>
+        <summary>Perangkat apa yang didukung?</summary>
+        <p>ESP32, ESP8266, dan Raspberry Pi (varian lain menyusul), plus perangkat yang sudah
+        berjalan Tasmota atau ESPHome. Onboard dilakukan langsung dari portal — sambungkan via
+        USB, flash firmware dan konfigurasi dari browser, tanpa install tool tambahan.</p>
+      </details>
+      <details>
+        <summary>Data saya disimpan di mana, dan apakah aman?</summary>
+        <p>Di Indonesia, pada infrastruktur kami. Isolasi antar tenant ditegakkan di layer data
+        (bukan hanya di tampilan), koneksi perangkat terenkripsi TLS/mTLS, dan arsip tersimpan
+        sebagai format terbuka yang bisa Anda ekspor penuh kapan saja.</p>
+      </details>
+      <details>
+        <summary>Apakah saya perlu tim data atau bisa coding?</summary>
+        <p>Tidak. Seluruh alur — bertanya, membuat dashboard, memasang alert — dilakukan lewat
+        percakapan dalam Bahasa Indonesia. Untuk developer, semua kemampuan yang sama juga
+        dapat diakses lewat MQTT dan API portal.</p>
+      </details>
+      <details>
+        <summary>Data enterprise apa yang bisa digabungkan dengan data IoT?</summary>
+        <p>Unstructured: SharePoint, Google Workspace, Confluence, OneNote, Notion, email, PDF.
+        Structured: warehouse, database relasional &amp; NoSQL, time-series, spreadsheet, API.
+        Dataset lain milik Anda (BYOD) juga bisa dibawa masuk ke analitik yang sama.</p>
+      </details>
+      <details>
+        <summary>Bagaimana dengan BMS/PLC existing (BACnet, Modbus)?</summary>
+        <p>Integrasi gateway BMS/PLC (BACnet, Modbus) ada di roadmap kami dan menjadi prioritas
+        bila kebutuhan Anda mencakupnya — kabari dari portal. Saat ini perangkat ESP32, ESP8266,
+        Raspberry Pi, Tasmota, dan ESPHome didukung penuh, dan gateway industri menyusul
+        mengikuti kebutuhan pilot.</p>
+      </details>
+      <details>
+        <summary>Bagaimana kalau jawaban AI salah hitung?</summary>
+        <p>Semua jawaban dihitung dari data tenant Anda sendiri dan bisa diverifikasi ke
+        sumbernya — grafik, arsip parquet, hingga data mentah di file browser. Kami sengaja
+        tidak membuat AI mengarang angka: pertanyaan di luar cakupan data Anda akan dijawab
+        apa adanya, bukan ditebak.</p>
+      </details>
+      <details>
+        <summary>Berapa harganya?</summary>
+        <p>Model berlangganan (SaaS) per workspace dan per perangkat — tanpa hardware proprietary
+        yang harus dibeli dari kami. Skema harga mengikuti skala deployment Anda; hubungi kami
+        lewat portal untuk penawaran.</p>
+      </details>
+      <details>
+        <summary>Bagaimana cara memulai?</summary>
+        <p>Daftar di portal, onboard perangkat pertama, dan tanyakan sesuatu tentang datanya —
+        semuanya bisa dicoba langsung. Untuk kebutuhan gedung, fasilitas, atau proyek integrator
+        berskala lebih besar, hubungi kami dari portal.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -207,8 +471,9 @@
 <!-- CTA -->
 <section class="cta">
   <div class="container">
-    <h2>Mulai dari satu sensor hari ini.</h2>
-    <p>Daftar, sambungkan perangkat pertama, dan lihat data Anda hidup dalam hitungan menit.</p>
+    <h2>Mulai dari satu panel listrik.</h2>
+    <p>Yang sudah berjalan kami tawarkan; yang sedang dibangun kami katakan sedang dibangun.
+    Mulai dari satu meter hari ini — jawaban atas pertanyaan pertama Anda bisa jadi minggu ini.</p>
     <a href="https://explore.ter.asia" class="btn btn-primary btn-lg">Buka Portal Terasia</a>
   </div>
 </section>
@@ -218,15 +483,17 @@
   <div class="container footer-inner">
     <div>
       <span class="logo">Tera<span class="logo-accent">sia</span></span>
-      <p class="footer-tag">IoT analytics untuk pasar Indonesia.</p>
+      <p class="footer-tag">Dari data perangkat jadi keputusan bisnis. Untuk Indonesia.</p>
     </div>
     <div class="footer-links">
       <a href="https://explore.ter.asia">Portal</a>
       <a href="https://mqtt.ter.asia">MQTT</a>
+      <a href="https://docs.ter.asia">Dokumentasi</a>
     </div>
   </div>
   <div class="container footer-copy">© 2026 Terasia</div>
 </footer>
 
+<script src="tera.js" defer></script>
 </body>
 </html>
