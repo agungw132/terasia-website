@@ -4,18 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terasia — Data IoT, cukup tanya.</title>
+<link rel="canonical" href="https://ter.asia/">
+<meta name="theme-color" content="#0b111e">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ter.asia/">
+<meta property="og:title" content="Terasia — Data IoT, cukup tanya.">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary">
 <meta name="description" content="Terasia membuat data IoT berbicara: gabungkan sensor, dokumen, dan data bisnis dalam satu workspace — cukup tanya dalam Bahasa Indonesia, chatbot membuatkan dashboard dan alert-nya. Data tetap berdaulat di Indonesia.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/tera.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 </head>
 <body>
+<a href="#konten" class="skip-link">Lompat ke konten</a>
 
 <!-- NAV -->
 <nav class="nav">
   <div class="container nav-inner">
     <a href="#" class="logo">Tera<span class="logo-accent">sia</span></a>
-    <div class="nav-links">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Buka menu"><span class="nav-toggle-bar" aria-hidden="true"></span></button>
+    <div class="nav-links" id="nav-links">
       <a href="#workspace">Workspace</a>
       <a href="#nilai">Nilai</a>
       <a href="#developer">Developer</a>
@@ -26,6 +35,8 @@
     <a href="https://explore.ter.asia" class="btn btn-primary btn-sm">Buka Portal</a>
   </div>
 </nav>
+
+<main id="konten" tabindex="-1">
 
 <!-- HERO -->
 <header class="hero">
@@ -93,22 +104,22 @@
     <div class="shots">
       <figure class="shot">
         <div class="shot-bar"><span></span><span></span><span></span></div>
-        <img src="assets/portal-login.png" alt="Login portal explore.ter.asia" loading="lazy">
+        <img src="assets/portal-login.png" alt="Login portal explore.ter.asia" width="1280" height="577" loading="lazy">
         <figcaption>Portal explore.ter.asia — login Google atau email. Setiap akun otomatis punya workspace terpisah.</figcaption>
       </figure>
       <figure class="shot">
         <div class="shot-bar"><span></span><span></span><span></span></div>
-        <img src="assets/portal-mqtt-guide.png" alt="Panduan MQTT client di portal" loading="lazy">
+        <img src="assets/portal-mqtt-guide.png" alt="Panduan MQTT client di portal" width="1280" height="577" loading="lazy">
         <figcaption><strong>Guideline MQTT client</strong> — kredensial per perangkat, TLS 8883, isolasi topik per tenant ditegakkan broker.</figcaption>
       </figure>
       <figure class="shot">
         <div class="shot-bar"><span></span><span></span><span></span></div>
-        <img src="assets/portal-chat.png" alt="Chat Data di portal — tanya jawab data dalam Bahasa Indonesia" loading="lazy">
+        <img src="assets/portal-chat.png" alt="Chat Data di portal — tanya jawab data dalam Bahasa Indonesia" width="1280" height="577" loading="lazy">
         <figcaption><strong>Chat Data</strong> — tanya data dalam Bahasa Indonesia, langsung dari arsip tenant Anda: rangkuman, grafik, sampai keputusan.</figcaption>
       </figure>
       <figure class="shot">
         <div class="shot-bar"><span></span><span></span><span></span></div>
-        <img src="assets/portal-panel.png" alt="MQTT Panel di portal" loading="lazy">
+        <img src="assets/portal-panel.png" alt="MQTT Panel di portal" width="1280" height="577" loading="lazy">
         <figcaption><strong>Satu portal, semua fitur</strong> — onboard perangkat, MQTT panel &amp; playground, Grafana, chat data. Semua dari satu login.</figcaption>
       </figure>
     </div>
@@ -289,7 +300,7 @@
     dapat diakses lewat API portal. Tanpa membuat app di pihak ketiga, tanpa menunggu approval.</p>
     <div class="codeblock">
       <div class="code-head">telemetry perangkat → workspace</div>
-      <pre>mosquitto_pub -h mqtt.ter.asia -p 8883 \
+      <pre tabindex="0" role="region" aria-label="Contoh perintah mosquitto_pub">mosquitto_pub -h mqtt.ter.asia -p 8883 \
   -u u_7f3a9c1d -P "$MQTT_PASSWORD" \
   -t t/7f3a9c1d/energy/panel-3c \
   -m '{"power_w": 1420, "kwh_total": 2184.7}'</pre>
@@ -478,6 +489,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container footer-inner">
@@ -494,6 +507,7 @@
   <div class="container footer-copy">© 2026 Terasia</div>
 </footer>
 
+<script src="nav.js" defer></script>
 <script src="tera.js" defer></script>
 </body>
 </html>
