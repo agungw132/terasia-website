@@ -9,10 +9,15 @@
   var fab = document.createElement("button");
   fab.className = "tera-fab";
   fab.setAttribute("aria-label", "Buka Tera, asisten AI Terasia");
+  fab.setAttribute("aria-expanded", "false");
+  fab.setAttribute("aria-controls", "tera-panel");
   fab.textContent = "T";
 
   var panel = document.createElement("div");
   panel.className = "tera-panel";
+  panel.id = "tera-panel";
+  panel.setAttribute("role", "dialog");
+  panel.setAttribute("aria-label", "Tera, asisten AI Terasia");
   panel.innerHTML =
     '<div class="tera-head">' +
     '<div class="tera-avatar">T</div>' +
@@ -20,9 +25,9 @@
     '<div class="tera-head-sub">Asisten AI Terasia</div></div>' +
     '<button class="tera-close" aria-label="Tutup">×</button>' +
     "</div>" +
-    '<div class="tera-msgs"></div>' +
+    '<div class="tera-msgs" role="log" aria-live="polite"></div>' +
     '<form class="tera-form">' +
-    '<input class="tera-input" type="text" placeholder="Tanya tentang Terasia…" maxlength="2000" autocomplete="off">' +
+    '<input class="tera-input" type="text" aria-label="Tanya Tera" placeholder="Tanya tentang Terasia…" maxlength="2000" autocomplete="off">' +
     '<button class="tera-send" type="submit">Kirim</button>' +
     "</form>";
 
@@ -45,6 +50,7 @@
 
   function open() {
     panel.classList.add("open");
+    fab.setAttribute("aria-expanded", "true");
     if (!msgs.children.length) {
       addMsg("bot", "Halo! Saya Tera, asisten AI Terasia. Tanyakan apa saja tentang " +
         "platform kami — mulai dari cara menghubungkan perangkat sampai analitik data.");
@@ -52,12 +58,19 @@
     input.focus();
   }
 
-  function close() { panel.classList.remove("open"); }
+  function close() {
+    panel.classList.remove("open");
+    fab.setAttribute("aria-expanded", "false");
+    fab.focus();
+  }
 
   fab.addEventListener("click", function () {
     if (panel.classList.contains("open")) close(); else open();
   });
   panel.querySelector(".tera-close").addEventListener("click", close);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && panel.classList.contains("open")) close();
+  });
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
